@@ -95,17 +95,17 @@
     <section class="hero">
       <div class="container hero-inner">
         <div>
-          <span class="pill">Vikend oddih: delavnice & izkustva</span>
+          <span class="pill">Vikend oddih</span>
           <h1>Raziskovanje notranje moči in skritih potencialov</h1>
-          <p class="muted">Celostni program z elementi celostne kineziologije, zahodne in tradicionalne kitajske medicine, akupunkture, dihalnih tehnik, joge, pilatesa, glasbe in več. Skupaj dvigujemo zavedanje, avtentičnost in kakovost odnosov.</p>
+          <p class="muted">Skrbno zasnovan program z elementi celostne kineziologije, zahodne in tradicionalne kitajske medicine, akupunkture, dihalnih tehnik, joge, pilatesa, glasbe in še več. Skupaj dvigujemo zavedanje, avtentičnost in kakovost odnosov.</p>
           <div class="card" id="info">
             <h2>Informacije o dogodku</h2>
             <ul>
-              <li><strong>Kdaj:</strong> Petek – Nedelja (3 dni)</li>
-              <li><strong>Kje:</strong> Pohorje (namestitev v <a href="https://pohorjevillageresort.si/" target="_blank" rel="noopener">Pohorje Village Resort</a>)</li>
-              <li><strong>Komu je namenjeno:</strong> Radovednim in odprtim posameznikom, ki želijo v globino spoznati sebe ter svoje delovanje.</li>
+              <li><strong>Kdaj:</strong> 17.-19.10. (petek-nedelja)</li>
+              <li><strong>Kje:</strong> v osrčju Pohorja (namestitev v <a href="https://pohorjevillageresort.si/" target="_blank" rel="noopener">Pohorje Village Resort</a>)</li>
+              <li><strong>Komu je namenjeno:</strong> Radovednim in za novosti odprtim posameznikom, ki želijo v globino spoznati sebe ter svoje delovanje.</li>
             </ul>
-            <div class="hint">Opomba: število mest je omejeno. Prijava spodaj.</div>
+            <div class="hint">Opomba: število mest je zelo omejeno.</div>
           </div>
         </div>
         <aside class="hero-aside">
@@ -121,7 +121,7 @@
             <h3 style="margin-top:0">Kaj lahko pričakuješ?</h3>
             <ul>
               <li>Skupinska in individualna izkustva</li>
-              <li>Orodja za dvig zavedanja in intuitivno delovanje</li>
+              <li>Orodja za dvig lastnega zavedanja in intuitivno delovanje</li>
               <li>Nežen, a učinkovit premik v telesno-čustveni inteligenci</li>
             </ul>
             <button class="cta" onclick="document.getElementById('prijava').scrollIntoView({behavior:'smooth'})">Rezerviraj svoje mesto</button>
@@ -151,7 +151,7 @@
             <li class="item"><div class="time">16.00–16.30</div><div>Zbor, nagovor in pijača dobrodošlice</div></li>
             <li class="item"><div class="time">16.30–18.30</div><div>Ustvarjanje črnobelih mandal (Urška)</div></li>
             <li class="item"><div class="time">18.30–19.30</div><div>Večerja</div></li>
-            <li class="item"><div class="time">20.00–21.30</div><div>Zvočna kopel (Monika) <span class="badge">ali</span> Meditacija (Tadej, Andraž)</div></li>
+            <li class="item"><div class="time">20.00–21.30</div><div>Meditacija (Tadej, Andraž)</div></li>
           </ul>
         </div>
 
@@ -194,25 +194,35 @@
                 <input id="ime" name="ime" type="text" required placeholder="npr. Ana Novak" />
               </div>
               <div>
+                <label for="ime">Naslov *</label>
+                <input id="ime" name="ime" type="text" required placeholder="npr. Dunajska cesta 105, Ljubljana" />
+              </div>
+              <div>
                 <label for="email">E-pošta *</label>
                 <input id="email" name="email" type="email" required placeholder="ana@example.com" />
               </div>
               <div>
-                <label for="telefon">Telefon</label>
+                <label for="telefon">Telefon *</label>
                 <input id="telefon" name="telefon" type="tel" placeholder="npr. 040 123 456" />
               </div>
               <div>
-                <label for="namestitev">Želim namestitev</label>
+                <label for="namestitev">Želim namestitev v Pohorje Village Resort *</label>
                 <select id="namestitev" name="namestitev">
                   <option value="da">Da</option>
                   <option value="ne">Ne</option>
-                  <option value="neodloceno">Še nisem odločen/a</option>
+                </select>
+              </div>
+              <div>
+                <label for="pogoji">Potrjujem, da sem seznanjen/a s plačilnimi pogoji ter se prijavljam na vikend oddih *</label>
+                <select id="namestitev" name="pogoji">
+                  <option value="da">Da</option>
+                  <option value="ne">Ne</option>
                 </select>
               </div>
             </div>
             <div>
               <label for="sporocilo">Sporočilo / posebnosti</label>
-              <textarea id="sporocilo" name="sporocilo" rows="4" placeholder="Vprašanja, posebne želje, morebitne zdravstvene posebnosti ..."></textarea>
+              <textarea id="sporocilo" name="sporocilo" rows="4" placeholder="Vprašanja, posebne želje, morebitne prehranske posebnosti ..."></textarea>
             </div>
             <div class="form-actions">
               <button type="submit" class="cta">Pošlji prijavo</button>
@@ -243,7 +253,6 @@
   <footer>
     <div class="container" style="padding:1.25rem 0; display:flex; gap:1rem; justify-content:space-between; align-items:center; flex-wrap:wrap">
       <div>&copy; <span id="year"></span> Raziskovanje notranje moči. Vse pravice pridržane.</div>
-      <div>Barvna paleta: <span class="badge">#9dc183</span> <span class="badge">#7a9c59</span> <span class="badge">#0a0a0a</span> <span class="badge">#f6f1ee</span></div>
     </div>
   </footer>
 
