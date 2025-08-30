@@ -188,48 +188,51 @@
           <h2 id="prijava-naslov" style="margin-top:0">Prijavnica za udeležence</h2>
           <p class="muted">Izpolni spodnji obrazec. Po oddaji prejmeš potrditveno sporočilo na e-pošto. *Obvezna polja.</p>
           <form id="signup-form">
-            <div class="form-grid">
-              <div>
-                <label for="ime">Ime in priimek *</label>
-                <input id="ime" name="ime" type="text" required placeholder="npr. Ana Novak" />
-              </div>
-              <div>
-                <label for="ime">Naslov *</label>
-                <input id="ime" name="ime" type="text" required placeholder="npr. Dunajska cesta 105, Ljubljana" />
-              </div>
-              <div>
-                <label for="email">E-pošta *</label>
-                <input id="email" name="email" type="email" required placeholder="ana@example.com" />
-              </div>
-              <div>
-                <label for="telefon">Telefon *</label>
-                <input id="telefon" name="telefon" type="tel" placeholder="npr. 040 123 456" />
-              </div>
-              <div>
-                <label for="namestitev">Želim namestitev v Pohorje Village Resort *</label>
-                <select id="namestitev" name="namestitev">
-                  <option value="da">Da</option>
-                  <option value="ne">Ne</option>
-                </select>
-              </div>
-              <div>
-                <label for="pogoji">Potrjujem, da sem seznanjen/a s plačilnimi pogoji ter se prijavljam na vikend oddih *</label>
-                <select id="namestitev" name="pogoji">
-                  <option value="da">Da</option>
-                  <option value="ne">Ne</option>
-                </select>
-              </div>
-            </div>
-            <div>
-              <label for="sporocilo">Sporočilo / posebnosti</label>
-              <textarea id="sporocilo" name="sporocilo" rows="4" placeholder="Vprašanja, posebne želje, morebitne prehranske posebnosti ..."></textarea>
-            </div>
-            <div class="form-actions">
-              <button type="submit" class="cta">Pošlji prijavo</button>
-              <span class="hint" id="status"></span>
-            </div>
-            <p class="hint">Z oddajo soglašaš, da lahko tvoje podatke uporabimo za organizacijo dogodka in komunikacijo v zvezi z njim.</p>
-          </form>
+  <!-- HONEYPOT -->
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+  <div class="form-grid">
+    <div>
+      <label for="ime">Ime in priimek *</label>
+      <input id="ime" name="ime" type="text" required placeholder="npr. Ana Novak" />
+    </div>
+    <div>
+      <label for="email">E-pošta *</label>
+      <input id="email" name="email" type="email" required placeholder="ana@example.com" />
+    </div>
+    <div>
+      <label for="telefon">Telefon</label>
+      <input id="telefon" name="telefon" type="tel" placeholder="npr. 040 123 456" />
+    </div>
+    <div>
+      <label for="namestitev">Želim namestitev</label>
+      <select id="namestitev" name="namestitev">
+        <option value="da">Da</option>
+        <option value="ne">Ne</option>
+        <option value="neodloceno">Še nisem odločen/a</option>
+      </select>
+    </div>
+  </div>
+
+  <div>
+    <label for="sporocilo">Sporočilo / posebnosti</label>
+    <textarea id="sporocilo" name="sporocilo" rows="4" placeholder="Vprašanja, posebne želje, morebitne zdravstvene posebnosti ..."></textarea>
+  </div>
+
+  <label style="display:flex;gap:.5rem;align-items:flex-start">
+    <input type="checkbox" name="privolitev" required>
+    <span>Strinjam se, da moje podatke uporabite za organizacijo dogodka in komunikacijo v zvezi z njim.</span>
+  </label>
+
+  <div class="form-actions">
+    <button type="submit" class="cta">Pošlji prijavo</button>
+    <span class="hint" id="status"></span>
+  </div>
+
+  <!-- (neobvezno) po uspehu preusmeri na anchor -->
+  <input type="hidden" name="_redirect" value="https://rise-inside.github.io/oddih-raziskovanje-notranje-moci/#prijava-uspeh">
+</form>
+
         </div>
       </div>
     </section>
@@ -258,7 +261,7 @@
 
   <script>
     // Prijavnica (Formspree/Netlify ali mailto fallback)
-    const FORM_ENDPOINT = ""; // npr. "https://formspree.io/f/xxxxxx"
+    const FORM_ENDPOINT = "https://formspree.io/f/mjkewppq";
     const EMAIL_TO = "info@alteracu.si";
     const form = document.getElementById('signup-form');
     if(form){
