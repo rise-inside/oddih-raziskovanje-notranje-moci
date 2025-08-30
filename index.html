@@ -197,26 +197,29 @@
       <input id="ime" name="ime" type="text" required placeholder="npr. Ana Novak" />
     </div>
     <div>
+      <label for="naslov">Naslov *</label>
+      <input id="email" name="email" type="text" required placeholder="npr. Tržaška cesta 100, Ljubljana" />
+    </div>
+    <div>
       <label for="email">E-pošta *</label>
       <input id="email" name="email" type="email" required placeholder="ana@example.com" />
     </div>
     <div>
-      <label for="telefon">Telefon</label>
-      <input id="telefon" name="telefon" type="tel" placeholder="npr. 040 123 456" />
+      <label for="telefon">Telefon *</label>
+      <input id="telefon" name="telefon" type="tel" required placeholder="npr. 040 123 456" />
     </div>
     <div>
-      <label for="namestitev">Želim namestitev</label>
-      <select id="namestitev" name="namestitev">
+      <label for="namestitev">Želim namestitev *</label>
+      <select id="namestitev" name="namestitev" required>
         <option value="da">Da</option>
         <option value="ne">Ne</option>
-        <option value="neodloceno">Še nisem odločen/a</option>
       </select>
     </div>
   </div>
 
   <div>
     <label for="sporocilo">Sporočilo / posebnosti</label>
-    <textarea id="sporocilo" name="sporocilo" rows="4" placeholder="Vprašanja, posebne želje, morebitne zdravstvene posebnosti ..."></textarea>
+    <textarea id="sporocilo" name="sporocilo" rows="4" placeholder="Vprašanja, želje, prehranske posebnosti ..."></textarea>
   </div>
 
   <label style="display:flex;gap:.5rem;align-items:flex-start">
