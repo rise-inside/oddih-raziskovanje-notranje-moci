@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raziskovanje notranje moči in skritih potencialov – Vikend oddih</title>
+  <meta name="description" content="Vikend oddih z delavnicami za raziskovanje notranje moči in skritih potencialov. Program, prijavnica, lokacija in vse informacije na enem mestu." />
+  <style>
+    :root{
+      --light-green:#9dc183;
+      --dark-green:#7a9c59;
+      --near-black:#0a0a0a;
+      --light-beige:#f6f1ee;
+      --radius:16px;
+      --shadow:0 8px 24px rgba(10,10,10,.08);
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;color:var(--near-black);background:var(--light-beige);line-height:1.6}
+    a{color:var(--dark-green);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1100px,92%);margin-inline:auto}
+    /* Header */
+    header{position:sticky;top:0;background:rgba(246,241,238,.8);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid #e7e1dd;z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
+    .brand{display:flex;gap:.6rem;align-items:center;font-weight:700}
+    .brand-badge{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--dark-green),var(--light-green));box-shadow:var(--shadow)}
+    nav ul{display:flex;gap:1rem;list-style:none;padding:0;margin:0}
+    nav a{padding:.5rem .75rem;border-radius:999px}
+    nav a:hover{background:#e9e3df}
+    .cta{background:var(--dark-green);color:white;border-radius:999px;padding:.6rem 1rem;font-weight:600;border:0;box-shadow:var(--shadow)}
+    .cta:hover{filter:brightness(1.05);cursor:pointer}
+    /* Hero (brez slike, clean) */
+    .hero{padding:clamp(2rem,6vw,5rem) 0}
+    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+    .hero h1{font-size:clamp(1.8rem,4.4vw,3rem);line-height:1.1;margin:.2rem 0}
+    .pill{display:inline-block;background:#e7efde;color:#2f3a2a;padding:.3rem .8rem;border-radius:999px;font-weight:600;letter-spacing:.2px}
+    .card{background:white;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.25rem}
+    .hero .card ul{margin:.5rem 0 .25rem 1.2rem}
+    .hero-aside{display:grid;gap:1rem}
+    /* Sections */
+    section{padding:clamp(2rem,6vw,4rem) 0}
+    h2{font-size:clamp(1.4rem,3.4vw,2rem);margin:0 0 .75rem}
+    .muted{color:#3a3a3a;opacity:.9}
+    /* Program */
+    .day{border-left:6px solid var(--light-green);background:white;border-radius:12px;padding:1rem 1.25rem;margin:.75rem 0;box-shadow:var(--shadow)}
+    .items{display:grid;gap:.35rem;margin:.5rem 0 0 0;padding:0;list-style:none}
+    .item{display:grid;grid-template-columns:90px 1fr;gap:1rem}
+    .time{font-weight:700;color:#2f3a2a}
+    /* Form */
+    form{display:grid;gap:.9rem}
+    input,select,textarea{width:100%;padding:.8rem;border:1px solid #e0d8d3;border-radius:12px;background:#fff;font:inherit}
+    label{font-weight:600}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .form-actions{display:flex;gap:.75rem;align-items:center}
+    .hint{font-size:.9rem;color:#4a4a4a}
+    .badge{display:inline-block;background:#eef6ec;border:1px solid #d8ead2;color:#2d3b25;padding:.25rem .5rem;border-radius:8px;font-size:.8rem}
+    /* Footer */
+    footer{background:#111;color:#e6e1de}
+    footer a{color:#d3f0c7}
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-inner{grid-template-columns:1fr}
+      .form-grid{grid-template-columns:1fr}
+      .item{grid-template-columns:80px 1fr}
+    }
+    /* Visual break with local forest image */
+    .break{min-height:44vh;display:grid;place-items:center;text-align:center;color:var(--light-beige);
+      background:linear-gradient(0deg,rgba(10,10,10,.38),rgba(10,10,10,.38)),
+                 url('./img/forest.jpg') center/cover no-repeat fixed;
+    }
+    .break .inner{padding:clamp(1rem,3vw,2rem);background:rgba(10,10,10,.25);border:1px solid rgba(255,255,255,.25);border-radius:var(--radius);box-shadow:var(--shadow);
+      opacity:0;transform:translateY(20px);transition:opacity 1.2s ease, transform 1.2s ease;
+    }
+    .break.visible .inner{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="brand-badge" aria-hidden="true"></span> Raziskovanje notranje moči</div>
+      <nav aria-label="Glavna navigacija">
+        <ul>
+          <li><a href="#info">Informacije</a></li>
+          <li><a href="#program">Program</a></li>
+          <li><a href="#prijava">Prijava</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+      <button class="cta" onclick="document.getElementById('prijava').scrollIntoView({behavior:'smooth'})">Prijavi se</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <span class="pill">Vikend oddih: delavnice & izkustva</span>
+          <h1>Raziskovanje notranje moči in skritih potencialov</h1>
+          <p class="muted">Celostni program z elementi celostne kineziologije, zahodne in tradicionalne kitajske medicine, akupunkture, dihalnih tehnik, joge, pilatesa, glasbe in več. Skupaj dvigujemo zavedanje, avtentičnost in kakovost odnosov.</p>
+          <div class="card" id="info">
+            <h2>Informacije o dogodku</h2>
+            <ul>
+              <li><strong>Kdaj:</strong> Petek – Nedelja (3 dni)</li>
+              <li><strong>Kje:</strong> Pohorje (namestitev v <a href="https://pohorjevillageresort.si/" target="_blank" rel="noopener">Pohorje Village Resort</a>)</li>
+              <li><strong>Komu je namenjeno:</strong> Radovednim in odprtim posameznikom, ki želijo v globino spoznati sebe ter svoje delovanje.</li>
+            </ul>
+            <div class="hint">Opomba: število mest je omejeno. Prijava spodaj.</div>
+          </div>
+        </div>
+        <aside class="hero-aside">
+          <div class="card">
+            <h3 style="margin-top:0">Hitre povezave</h3>
+            <ul>
+              <li>🏨 Namestitev: <a href="https://pohorjevillageresort.si/" target="_blank" rel="noopener">Pohorje Village Resort</a></li>
+              <li>🌐 Spletna stran: <a href="https://alteracu.si/" target="_blank" rel="noopener">alteracu.si</a></li>
+              <li>📸 Instagram: <a href="https://instagram.com/alter.acu" target="_blank" rel="noopener">@alter.acu</a></li>
+            </ul>
+          </div>
+          <div class="card" style="background:linear-gradient(135deg,var(--light-green),#b8d79b);color:#1a2812">
+            <h3 style="margin-top:0">Kaj lahko pričakuješ?</h3>
+            <ul>
+              <li>Skupinska in individualna izkustva</li>
+              <li>Orodja za dvig zavedanja in intuitivno delovanje</li>
+              <li>Nežen, a učinkovit premik v telesno-čustveni inteligenci</li>
+            </ul>
+            <button class="cta" onclick="document.getElementById('prijava').scrollIntoView({behavior:'smooth'})">Rezerviraj svoje mesto</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FOREST BREAK (visual banner) -->
+    <section class="break" aria-label="Gozd Pohorja – vizualni premor">
+      <div class="inner">
+        <h2 style="margin:.25rem 0">Povezava z naravo</h2>
+        <p class="muted" style="color:#f0ebe8;opacity:.95">Gozd Pohorja kot prostor umiritve in regeneracije med vsebinami programa.</p>
+      </div>
+    </section>
+
+    <!-- PROGRAM -->
+    <section id="program">
+      <div class="container">
+        <h2>Program</h2>
+        <p class="muted">Spodnji okvirni program je zasnovan za postopno poglabljanje izkustev. Možne so manjše spremembe vrstnega reda ali vsebin na kraju samem.</p>
+
+        <div class="day">
+          <h3>Dan 1 (petek)</h3>
+          <ul class="items">
+            <li class="item"><div class="time">15.00–16.00</div><div>Prihod in namestitev</div></li>
+            <li class="item"><div class="time">16.00–16.30</div><div>Zbor, nagovor in pijača dobrodošlice</div></li>
+            <li class="item"><div class="time">16.30–18.30</div><div>Ustvarjanje črnobelih mandal (Urška)</div></li>
+            <li class="item"><div class="time">18.30–19.30</div><div>Večerja</div></li>
+            <li class="item"><div class="time">20.00–21.30</div><div>Zvočna kopel (Monika) <span class="badge">ali</span> Meditacija (Tadej, Andraž)</div></li>
+          </ul>
+        </div>
+
+        <div class="day">
+          <h3>Dan 2 (sobota)</h3>
+          <ul class="items">
+            <li class="item"><div class="time">7.00–8.15</div><div>Pilates (Lara) + obrazne vaje (Nuša)</div></li>
+            <li class="item"><div class="time">8.30–9.30</div><div>Zajtrk</div></li>
+            <li class="item"><div class="time">10.00–12.00</div><div>Karmična diagnostika (Andraž)</div></li>
+            <li class="item"><div class="time">12.00–16.00</div><div>Prosto popoldne (pohod po Pohorju, wellness, itd.)</div></li>
+            <li class="item"><div class="time">16.00–17.00</div><div>Dihanje (Sanja)</div></li>
+            <li class="item"><div class="time">17.00–18.30</div><div>Q&amp;A s posameznimi strokovnjaki oz. kratke individualne obravnave (30-minutni sloti)</div></li>
+            <li class="item"><div class="time">18.30–19.30</div><div>Večerja</div></li>
+            <li class="item"><div class="time">20.00–22.00</div><div>Skupinska akupunktura (Saška, Vanja) + zvočna kopel (Monika) + integracija (Tadej)</div></li>
+          </ul>
+        </div>
+
+        <div class="day">
+          <h3>Dan 3 (nedelja)</h3>
+          <ul class="items">
+            <li class="item"><div class="time">7.00–8.15</div><div>Joga (Tjaša) + samomasaža obraza (Nuša)</div></li>
+            <li class="item"><div class="time">8.30–9.30</div><div>Zajtrk</div></li>
+            <li class="item"><div class="time">10.00–11.30</div><div>Gibalno-energijski Embodiment (Tadej, Andraž)</div></li>
+            <li class="item"><div class="time">11.30–12.00</div><div>Zaključne misli</div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIJAVA -->
+    <section id="prijava" aria-labelledby="prijava-naslov">
+      <div class="container">
+        <div class="card">
+          <h2 id="prijava-naslov" style="margin-top:0">Prijavnica za udeležence</h2>
+          <p class="muted">Izpolni spodnji obrazec. Po oddaji prejmeš potrditveno sporočilo na e-pošto. *Obvezna polja.</p>
+          <form id="signup-form">
+            <div class="form-grid">
+              <div>
+                <label for="ime">Ime in priimek *</label>
+                <input id="ime" name="ime" type="text" required placeholder="npr. Ana Novak" />
+              </div>
+              <div>
+                <label for="email">E-pošta *</label>
+                <input id="email" name="email" type="email" required placeholder="ana@example.com" />
+              </div>
+              <div>
+                <label for="telefon">Telefon</label>
+                <input id="telefon" name="telefon" type="tel" placeholder="npr. 040 123 456" />
+              </div>
+              <div>
+                <label for="namestitev">Želim namestitev</label>
+                <select id="namestitev" name="namestitev">
+                  <option value="da">Da</option>
+                  <option value="ne">Ne</option>
+                  <option value="neodloceno">Še nisem odločen/a</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="sporocilo">Sporočilo / posebnosti</label>
+              <textarea id="sporocilo" name="sporocilo" rows="4" placeholder="Vprašanja, posebne želje, morebitne zdravstvene posebnosti ..."></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="cta">Pošlji prijavo</button>
+              <span class="hint" id="status"></span>
+            </div>
+            <p class="hint">Z oddajo soglašaš, da lahko tvoje podatke uporabimo za organizacijo dogodka in komunikacijo v zvezi z njim.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT & POVEZAVE -->
+    <section id="kontakt">
+      <div class="container">
+        <div class="card">
+          <h2 style="margin-top:0">Kontakt &amp; povezave</h2>
+          <p>Za dodatna vprašanja ali informacije nam piši. Veselimo se tvojega sporočila!</p>
+          <ul>
+            <li>🌐 Spletna stran: <a href="https://alteracu.si/" target="_blank" rel="noopener">alteracu.si</a></li>
+            <li>📸 Instagram: <a href="https://instagram.com/alter.acu" target="_blank" rel="noopener">@alter.acu</a></li>
+            <li>🏨 Hotel: <a href="https://pohorjevillageresort.si/" target="_blank" rel="noopener">Pohorje Village Resort</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="padding:1.25rem 0; display:flex; gap:1rem; justify-content:space-between; align-items:center; flex-wrap:wrap">
+      <div>&copy; <span id="year"></span> Raziskovanje notranje moči. Vse pravice pridržane.</div>
+      <div>Barvna paleta: <span class="badge">#9dc183</span> <span class="badge">#7a9c59</span> <span class="badge">#0a0a0a</span> <span class="badge">#f6f1ee</span></div>
+    </div>
+  </footer>
+
+  <script>
+    // Prijavnica (Formspree/Netlify ali mailto fallback)
+    const FORM_ENDPOINT = ""; // npr. "https://formspree.io/f/xxxxxx"
+    const EMAIL_TO = "info@alteracu.si";
+    const form = document.getElementById('signup-form');
+    if(form){
+      const statusEl = document.getElementById('status');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        statusEl.textContent = "Pošiljam ...";
+        const data = Object.fromEntries(new FormData(form).entries());
+        if(!FORM_ENDPOINT){
+          const subject = encodeURIComponent("Prijava – Raziskovanje notranje moči");
+          const body = encodeURIComponent(
+            `Ime: ${data.ime || ''}\nEmail: ${data.email || ''}\nTelefon: ${data.telefon || ''}\nNamestitev: ${data.namestitev || ''}\nSporočilo: ${data.sporocilo || ''}`
+          );
+          window.location.href = `mailto:${EMAIL_TO}?subject=${subject}&body=${body}`;
+          statusEl.textContent = "Odprto e-poštno sporočilo – dokončaj pošiljanje v svojem e-poštnem programu.";
+          form.reset();
+          return;
+        }
+        try{
+          const resp = await fetch(FORM_ENDPOINT, { method:'POST', headers:{ 'Accept':'application/json' }, body:new FormData(form) });
+          if(resp.ok){
+            statusEl.textContent = "Hvala! Prijava je bila uspešno oddana. Preveri e-pošto.";
+            form.reset();
+          }else{
+            statusEl.textContent = "Ups, prišlo je do napake. Poskusi znova ali piši na " + EMAIL_TO + ".";
+          }
+        }catch(err){
+          statusEl.textContent = "Povezava ni uspela. Poskusi kasneje ali piši na " + EMAIL_TO + ".";
+        }
+      });
+    }
+    // Leto v footerju
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Animacija za forest break
+    const breakSection = document.querySelector('.break');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if(entry.isIntersecting){ breakSection.classList.add('visible'); } });
+    }, {threshold:0.3});
+    observer.observe(breakSection);
+  </script>
+</body>
+</html>
