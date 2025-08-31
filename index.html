@@ -201,9 +201,13 @@
   </ul>
 </div>
 
-          <form id="signup-form">
+          <form id="signup-form" action="https://formspree.io/f/mjkewppq" method="POST">
   <!-- HONEYPOT -->
   <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+  <!-- (neobvezno) subject v mailu -->
+  <input type="hidden" name="_subject" value="Prijava – Raziskovanje notranje moči">
+  <!-- (neobvezno) preusmeritev po uspehu -->
+  <input type="hidden" name="_redirect" value="https://rise-inside.github.io/oddih-raziskovanje-notranje-moci/#prijava-uspeh">
 
   <div class="form-grid">
     <div>
@@ -212,7 +216,7 @@
     </div>
     <div>
       <label for="naslov">Naslov *</label>
-      <input id="email" name="email" type="text" required placeholder="npr. Tržaška cesta 100, Ljubljana" />
+      <input id="naslov" name="naslov" type="text" required placeholder="npr. Tržaška cesta 100, Ljubljana" />
     </div>
     <div>
       <label for="email">E-pošta *</label>
@@ -225,6 +229,7 @@
     <div>
       <label for="namestitev">Želim namestitev *</label>
       <select id="namestitev" name="namestitev" required>
+        <option value="">-- izberi možnost --</option>
         <option value="da">Da</option>
         <option value="ne">Ne</option>
       </select>
@@ -245,9 +250,6 @@
     <button type="submit" class="cta">Pošlji prijavo</button>
     <span class="hint" id="status"></span>
   </div>
-
-  <!-- (neobvezno) po uspehu preusmeri na anchor -->
-  <input type="hidden" name="_redirect" value="https://rise-inside.github.io/oddih-raziskovanje-notranje-moci/#prijava-uspeh">
 </form>
 
         </div>
