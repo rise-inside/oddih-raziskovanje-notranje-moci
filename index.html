@@ -282,36 +282,6 @@
     // Prijavnica (Formspree/Netlify ali mailto fallback)
     const FORM_ENDPOINT = "https://formspree.io/f/mjkewppq";
     const EMAIL_TO = "info@alteracu.si";
-    const form = document.getElementById('signup-form');
-    if(form){
-      const statusEl = document.getElementById('status');
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        statusEl.textContent = "Pošiljam ...";
-        const data = Object.fromEntries(new FormData(form).entries());
-        if(!FORM_ENDPOINT){
-          const subject = encodeURIComponent("Prijava – Raziskovanje notranje moči");
-          const body = encodeURIComponent(
-            `Ime: ${data.ime || ''}\nEmail: ${data.email || ''}\nTelefon: ${data.telefon || ''}\nNamestitev: ${data.namestitev || ''}\nSporočilo: ${data.sporocilo || ''}`
-          );
-          window.location.href = `mailto:${EMAIL_TO}?subject=${subject}&body=${body}`;
-          statusEl.textContent = "Odprto e-poštno sporočilo – dokončaj pošiljanje v svojem e-poštnem programu.";
-          form.reset();
-          return;
-        }
-        try{
-          const resp = await fetch(FORM_ENDPOINT, { method:'POST', headers:{ 'Accept':'application/json' }, body:new FormData(form) });
-          if(resp.ok){
-            statusEl.textContent = "Hvala! Prijava je bila uspešno oddana. Preveri e-pošto.";
-            form.reset();
-          }else{
-            statusEl.textContent = "Ups, prišlo je do napake. Poskusi znova ali piši na " + EMAIL_TO + ".";
-          }
-        }catch(err){
-          statusEl.textContent = "Povezava ni uspela. Poskusi kasneje ali piši na " + EMAIL_TO + ".";
-        }
-      });
-    }
     // Leto v footerju
     document.getElementById('year').textContent = new Date().getFullYear();
     // Animacija za forest break
