@@ -19,6 +19,7 @@
     a{color:var(--dark-green);text-decoration:none}
     a:hover{text-decoration:underline}
     .container{width:min(1100px,92%);margin-inline:auto}
+
     /* Header */
     header{position:sticky;top:0;background:rgba(246,241,238,.8);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid #e7e1dd;z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
@@ -29,7 +30,8 @@
     nav a:hover{background:#e9e3df}
     .cta{background:var(--dark-green);color:white;border-radius:999px;padding:.6rem 1rem;font-weight:600;border:0;box-shadow:var(--shadow)}
     .cta:hover{filter:brightness(1.05);cursor:pointer}
-    /* Hero (brez slike, clean) */
+
+    /* Hero */
     .hero{padding:clamp(2rem,6vw,5rem) 0}
     .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
     .hero h1{font-size:clamp(1.8rem,4.4vw,3rem);line-height:1.1;margin:.2rem 0}
@@ -37,15 +39,18 @@
     .card{background:white;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.25rem}
     .hero .card ul{margin:.5rem 0 .25rem 1.2rem}
     .hero-aside{display:grid;gap:1rem}
+
     /* Sections */
     section{padding:clamp(2rem,6vw,4rem) 0}
     h2{font-size:clamp(1.4rem,3.4vw,2rem);margin:0 0 .75rem}
     .muted{color:#3a3a3a;opacity:.9}
+
     /* Program */
     .day{border-left:6px solid var(--light-green);background:white;border-radius:12px;padding:1rem 1.25rem;margin:.75rem 0;box-shadow:var(--shadow)}
     .items{display:grid;gap:.35rem;margin:.5rem 0 0 0;padding:0;list-style:none}
     .item{display:grid;grid-template-columns:90px 1fr;gap:1rem}
     .time{font-weight:700;color:#2f3a2a}
+
     /* Form */
     form{display:grid;gap:.9rem}
     input,select,textarea{width:100%;padding:.8rem;border:1px solid #e0d8d3;border-radius:12px;background:#fff;font:inherit}
@@ -54,22 +59,33 @@
     .form-actions{display:flex;gap:.75rem;align-items:center}
     .hint{font-size:.9rem;color:#4a4a4a}
     .badge{display:inline-block;background:#eef6ec;border:1px solid #d8ead2;color:#2d3b25;padding:.25rem .5rem;border-radius:8px;font-size:.8rem}
+
     /* Footer */
     footer{background:#111;color:#e6e1de}
     footer a{color:#d3f0c7}
+
     /* Responsive */
     @media (max-width: 900px){
       .hero-inner{grid-template-columns:1fr}
       .form-grid{grid-template-columns:1fr}
       .item{grid-template-columns:80px 1fr}
     }
+
     /* Visual break with local forest image */
-    .break{min-height:44vh;display:grid;place-items:center;text-align:center;color:var(--light-beige);
-      background:linear-gradient(0deg,rgba(10,10,10,.38),rgba(10,10,10,.38)),
-                 url('./img/forest.jpg') center/cover no-repeat fixed;
+    .break{
+      min-height:44vh;display:grid;place-items:center;text-align:center;color:var(--light-beige);
+      background:
+        linear-gradient(0deg,rgba(10,10,10,.38),rgba(10,10,10,.38)),
+        url('./img/forest.jpg') center/cover no-repeat fixed;
     }
-    .break .inner{padding:clamp(1rem,3vw,2rem);background:rgba(10,10,10,.25);border:1px solid rgba(255,255,255,.25);border-radius:var(--radius);box-shadow:var(--shadow);
-      opacity:0;transform:translateY(20px);transition:opacity 1.2s ease, transform 1.2s ease;
+    .break .inner{
+      padding:clamp(1rem,3vw,2rem);
+      background:rgba(10,10,10,.25);
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      opacity:0;transform:translateY(20px);
+      transition:opacity 1.2s ease, transform 1.2s ease;
     }
     .break.visible .inner{opacity:1;transform:translateY(0)}
   </style>
@@ -101,7 +117,7 @@
           <div class="card" id="info">
             <h2>Informacije o dogodku</h2>
             <ul>
-              <li><strong>Kdaj:</strong> 17.-19.10.2025 (petek-nedelja)</li>
+              <li><strong>Kdaj:</strong> 17.–19. 10. 2025 (petek–nedelja)</li>
               <li><strong>Kje:</strong> v osrčju Pohorja (namestitev v <a href="https://pohorjevillageresort.si/" target="_blank" rel="noopener">Pohorje Village Resort</a>)</li>
               <li><strong>Komu je namenjeno:</strong> Radovednim in za novosti odprtim posameznikom, ki želijo v globino spoznati sebe ter svoje delovanje.</li>
             </ul>
@@ -188,70 +204,70 @@
           <h2 id="prijava-naslov" style="margin-top:0">Prijavnica za udeležence</h2>
           <p class="muted">Izpolni spodnji obrazec. Po oddaji prejmeš potrditveno sporočilo na e-pošto. *Obvezna polja.</p>
 
+          <!-- Informativne cene -->
           <div class="card" style="background:#f6f1ee;padding:1rem;border-radius:12px;border:1px solid #e0d8d3;margin-bottom:1rem">
-  <h3 style="margin-top:0">Cena programa</h3>
-  <ul>
-    <li><strong>280 €</strong> – zgodnje prijave (do vključno 21.9.2025)</li>
-    <li><strong>320 €</strong> – redne prijave (po 21.9.2025)</li>
-  </ul>
-  <h3>Cena namestitve (vključuje 2x nočitev s polpenzionom, neomejen vstop v savne WellNest hiše, parkirno mesto, neomejeno uporabo WiFi, dnevno turistično in eko takso, DDV)</h3>
-  <ul>
-    <li><strong>Dvoposteljna soba</strong> – 145 €/oseba</li>
-    <li><strong>Enoposteljna soba</strong> – 185 €/oseba</li>
-  </ul>
-</div>
+            <h3 style="margin-top:0">Cena programa</h3>
+            <ul>
+              <li><strong>280 €</strong> – zgodnje prijave (do vključno 21. 9. 2025)</li>
+              <li><strong>320 €</strong> – redne prijave (po 21. 9. 2025)</li>
+            </ul>
+            <h3>Cena namestitve</h3>
+            <ul>
+              <li><strong>Dvoposteljna soba</strong> – 145 € / osebo</li>
+              <li><strong>Enoposteljna soba</strong> – 185 € / osebo</li>
+            </ul>
+          </div>
 
+          <!-- Obrazec (čisti HTML POST na Formspree) -->
           <form id="signup-form" action="https://formspree.io/f/mjkewppq" method="POST">
-  <!-- HONEYPOT -->
-  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-  <!-- (neobvezno) subject v mailu -->
-  <input type="hidden" name="_subject" value="Prijava – Raziskovanje notranje moči">
-  <!-- (neobvezno) preusmeritev po uspehu -->
-  <input type="hidden" name="_redirect" value="https://rise-inside.github.io/oddih-raziskovanje-notranje-moci/#prijava-uspeh">
+            <!-- honeypot -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            <!-- subject + redirect -->
+            <input type="hidden" name="_subject" value="Prijava – Raziskovanje notranje moči">
+            <input type="hidden" name="_redirect" value="https://rise-inside.github.io/oddih-raziskovanje-notranje-moci/#prijava-uspeh">
 
-  <div class="form-grid">
-    <div>
-      <label for="ime">Ime in priimek *</label>
-      <input id="ime" name="ime" type="text" required placeholder="npr. Ana Novak" />
-    </div>
-    <div>
-      <label for="naslov">Naslov *</label>
-      <input id="naslov" name="naslov" type="text" required placeholder="npr. Tržaška cesta 100, Ljubljana" />
-    </div>
-    <div>
-      <label for="email">E-pošta *</label>
-      <input id="email" name="email" type="email" required placeholder="ana@example.com" />
-    </div>
-    <div>
-      <label for="telefon">Telefon *</label>
-      <input id="telefon" name="telefon" type="tel" required placeholder="npr. 040 123 456" />
-    </div>
-    <div>
-      <label for="namestitev">Želim namestitev *</label>
-      <select id="namestitev" name="namestitev" required>
-        <option value="">-- izberi možnost --</option>
-        <option value="da">Da</option>
-        <option value="ne">Ne</option>
-      </select>
-    </div>
-  </div>
+            <div class="form-grid">
+              <div>
+                <label for="ime">Ime in priimek *</label>
+                <input id="ime" name="ime" type="text" required placeholder="npr. Ana Novak" />
+              </div>
+              <div>
+                <label for="naslov">Naslov *</label>
+                <input id="naslov" name="naslov" type="text" required placeholder="npr. Tržaška cesta 100, Ljubljana" />
+              </div>
+              <div>
+                <label for="email">E-pošta *</label>
+                <input id="email" name="email" type="email" required placeholder="ana@example.com" />
+              </div>
+              <div>
+                <label for="telefon">Telefon *</label>
+                <input id="telefon" name="telefon" type="tel" required placeholder="npr. 040 123 456" />
+              </div>
+              <div>
+                <label for="namestitev">Želim namestitev *</label>
+                <select id="namestitev" name="namestitev" required>
+                  <option value="">-- izberi možnost --</option>
+                  <option value="da">Da</option>
+                  <option value="ne">Ne</option>
+                </select>
+              </div>
+            </div>
 
-  <div>
-    <label for="sporocilo">Sporočilo / posebnosti</label>
-    <textarea id="sporocilo" name="sporocilo" rows="4" placeholder="Vprašanja, želje, prehranske posebnosti ..."></textarea>
-  </div>
+            <div>
+              <label for="sporocilo">Sporočilo / posebnosti</label>
+              <textarea id="sporocilo" name="sporocilo" rows="4" placeholder="Vprašanja, želje, prehranske posebnosti ..."></textarea>
+            </div>
 
-  <label style="display:flex;gap:.5rem;align-items:flex-start">
-    <input type="checkbox" name="privolitev" required>
-    <span>Strinjam se, da moje podatke uporabite za organizacijo dogodka in komunikacijo v zvezi z njim.</span>
-  </label>
+            <label style="display:flex;gap:.5rem;align-items:flex-start">
+              <input type="checkbox" name="privolitev" required>
+              <span>Strinjam se, da moje podatke uporabite za organizacijo dogodka in komunikacijo v zvezi z njim.</span>
+            </label>
 
-  <div class="form-actions">
-    <button type="submit" class="cta">Pošlji prijavo</button>
-    <span class="hint" id="status"></span>
-  </div>
-</form>
-
+            <div class="form-actions">
+              <button type="submit" class="cta">Pošlji prijavo</button>
+              <span class="hint" id="status"></span>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -279,17 +295,18 @@
   </footer>
 
   <script>
-    // Prijavnica (Formspree/Netlify ali mailto fallback)
-    const FORM_ENDPOINT = "https://formspree.io/f/mjkewppq";
-    const EMAIL_TO = "info@alteracu.si";
     // Leto v footerju
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+
     // Animacija za forest break
-    const breakSection = document.querySelector('.break');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if(entry.isIntersecting){ breakSection.classList.add('visible'); } });
-    }, {threshold:0.3});
-    observer.observe(breakSection);
+    const br = document.querySelector('.break');
+    if (br) {
+      const io = new IntersectionObserver(es => {
+        es.forEach(e => { if (e.isIntersecting) br.classList.add('visible'); });
+      }, {threshold:0.3});
+      io.observe(br);
+    }
   </script>
 </body>
 </html>
