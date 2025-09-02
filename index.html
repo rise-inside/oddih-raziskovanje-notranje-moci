@@ -21,90 +21,57 @@
     .container{width:min(1100px,92%);margin-inline:auto}
 
     /* Header */
-header {
-  position: sticky;
-  top: 0;
-  background: rgba(246,241,238,.8);
-  backdrop-filter: saturate(1.2) blur(8px);
-  border-bottom: 1px solid #e7e1dd;
-  z-index: 50;
+header{
+  position:sticky; top:0;
+  background:rgba(246,241,238,.8);
+  backdrop-filter:saturate(1.2) blur(8px);
+  border-bottom:1px solid #e7e1dd;
+  z-index:50;
 }
 
-/* Container v headerju naj bo čez cel zaslon */
-header .container {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding-left: 4vw;
-  padding-right: 4vw;
+/* čez cel zaslon, nežni robovi */
+header .container{
+  width:100%; max-width:none; margin:0;
+  padding:.75rem 2.5vw;           /* manj desnega/levega paddinga */
 }
 
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: .75rem 0;
+/* nova postavitev: brand | nav | CTA */
+.nav{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  column-gap:1rem;
 }
 
-.brand {
-  display: flex;
-  gap: .6rem;
-  align-items: center;
-  font-weight: 700;
+.brand{display:flex; gap:.6rem; align-items:center; font-weight:700}
+.brand-badge{width:28px;height:28px;border-radius:50%;
+  background:linear-gradient(135deg,var(--dark-green),var(--light-green));
+  box-shadow:var(--shadow);
 }
 
-.brand-badge {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: linear-gradient(135deg,var(--dark-green),var(--light-green));
-  box-shadow: var(--shadow);
+nav{min-width:0}                 /* naj se lahko skrči */
+nav ul{
+  display:flex; gap:.75rem;      /* malo manjši razmiki */
+  list-style:none; padding:0; margin:0;
+  justify-content:center;
+  flex-wrap:nowrap;              /* na desktopu brez preloma */
 }
 
-nav ul {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+nav a{padding:.5rem .75rem; border-radius:999px}
+nav a:hover{background:#e9e3df}
 
-nav a {
-  padding: .5rem .75rem;
-  border-radius: 999px;
+.cta{
+  justify-self:end; white-space:nowrap;  /* gumb ostane v eni vrstici */
+  background:var(--dark-green); color:#fff;
+  border-radius:999px; padding:.6rem 1rem;
+  font-weight:600; border:0; box-shadow:var(--shadow);
 }
-
-nav a:hover {
-  background: #e9e3df;
-}
-
-.cta {
-  background: var(--dark-green);
-  color: white;
-  border-radius: 999px;
-  padding: .6rem 1rem;
-  font-weight: 600;
-  border: 0;
-  box-shadow: var(--shadow);
-}
-
-.cta:hover {
-  filter: brightness(1.05);
-  cursor: pointer;
-}
+.cta:hover{filter:brightness(1.05); cursor:pointer}
 
 /* Mobilni popravki */
-@media (max-width: 640px) {
-  nav ul {
-    gap: .4rem;
-    flex-wrap: wrap; /* meniji se prelomijo v dve vrstici po potrebi */
-  }
-  .brand {
-    font-size: .95rem;
-  }
-  .cta {
-    display: none; /* skrij gumb na zelo majhnih zaslonih */
-  }
+@media (max-width: 720px){
+  .desktop-cta, .cta{display:none}       /* na zelo majhnih skrij gumb v headerju */
+  nav ul{gap:.5rem; flex-wrap:wrap; justify-content:flex-end}
 }
 
     /* Hero */
